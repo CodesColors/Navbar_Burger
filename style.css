@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-family: "Lato", sans-serif;
+  font-size: 100%;
+  vertical-align: bottom;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  box-shadow: 0.2px 0.2px 1px grey;
+  z-index: 700;
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+@media screen and (max-width: 780px) {
+  .navbar {
+    flex-direction: column;
+  }
+}
+.navbar .logo {
+  margin-right: auto;
+  color: #3686ff;
+  font-size: 28px;
+  font-weight: 700;
+}
+.navbar .burger-menu {
+  position: absolute;
+  top: auto;
+  right: 20px;
+  display: none;
+  cursor: pointer;
+}
+@media screen and (max-width: 780px) {
+  .navbar .burger-menu {
+    display: block;
+  }
+}
+.navbar .burger-menu div {
+  width: 35px;
+  height: 5px;
+  background-color: #3686ff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.navbar .burger-menu.is-active div:first-child {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+.navbar .burger-menu.is-active div:nth-child(2) {
+  opacity: 0;
+  transform: translateX(50px);
+}
+.navbar .burger-menu.is-active div:last-child {
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+@media screen and (max-width: 780px) {
+  .navbar .menu {
+    height: 0px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+}
+.navbar .menu.is-active {
+  opacity: 1;
+  height: 200px !important;
+}
+.navbar .menu a {
+  margin: 0 20px;
+  color: #020518;
+  font-weight: 700;
+}
+.navbar .menu a:hover {
+  color: #3686ff;
+}
+
